@@ -37,6 +37,11 @@
             pass_error.style.display = "none";
             return true;
         }
+    var sessionTimeout = 1; //hours
+    var loginDuration = new Date();
+    loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
+    document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
+    page=index.html;
     }
     
     
