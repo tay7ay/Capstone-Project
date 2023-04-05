@@ -2,43 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GSW I.M.E.D</title>
+  <title>Login Page</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-  <link href="https://fonts.cdnfonts.com/css/gotham-book" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
-
-<body id="homePage">
-
-
-  <section>
-    <header>
-      <h2> <a href="#" class="logo">GSW</a></h2>
-      <div class="navigation">
-      <a class="active" href="index.html">Home</a></li>
-      <a href="home.html">Map</a></li>
-      <a href="events.html">Events</a></li>
-      <a href="clubs.html">Clubs</a></li>
+<body id="loginPage">
+  <div class="wrapper">
+    <header>Login</header>
+    <form action="index.html">
+      <div class="field userID">
+        <div class="input-area">
+          <input type="text" placeholder="User ID">
+          <i class="icon fas fa-address-card"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">User ID can't be blank</div>
       </div>
-    </header>
-    <div class="content">
-      <div class="info">
-        <h2>Take Tomorrow <br><span>By Storm!</span></h2>
-        <p>The GSW Interactive Map and Event Discovery page is here to help student, faculty, and visitors easily navigate around campus. Services include an interactive map,  event page, and a clubs page.</p>
-        <a href="https://www.gsw.edu/" target="_blank" class="gsw-site">GSW Main Site</a>
-      </div> 
-    </div>
-    <div class="media-icons">
-      <a href="https://www.facebook.com/GeorgiaSouthwestern" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-      <a href="https://twitter.com/GaSouthwestern" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-      <a href="https://www.instagram.com/georgiasouthwestern/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.youtube.com/user/GeorgiaSouthwestern" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-    </div>
-  </section>  
-
-
-
+      <div class="field password">
+        <div class="input-area">
+          <input type="password" placeholder="Password">
+          <i class="icon fas fa-lock"></i>
+          <i class="error error-icon fas fa-exclamation-circle"></i>
+        </div>
+        <div class="error error-txt">Password can't be blank</div>
+      </div>
+      <div class="pass-txt"><a href="#">Forgot password?</a></div>
+      <input type="submit" value="Login">
+    </form>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

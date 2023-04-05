@@ -1,46 +1,46 @@
-	//Login Page Validation
+const form = document.querySelector("form");
+eField = form.querySelector(".userID"),
+eInput = eField.querySelector("input"),
+pField = form.querySelector(".password"),
+pInput = pField.querySelector("input");
 
-    var userID = document.forms['form']['userID'];
-    var password = document.forms['form']['password'];
-    
-    var userID_error = document.getElementById('userID_error');
-    var pass_error = document.getElementById('pass_error');
-    
-    userID.addEventListener('textInput', userID_Verify);
-    password.addEventListener('textInput', pass_Verify);
-    
-    function validated(){
-        if (userID.value.length < 9) {
-            userID.style.border = "1px solid red";
-            userID_error.style.display = "block";
-            userID.focus();
-            return false;
-        }
-        if (password.value.length < 6) {
-            password.style.border = "1px solid red";
-            pass_error.style.display = "block";
-            password.focus();
-            return false;
-        }
-    
+form.onsubmit = (e)=>{
+  e.preventDefault();
+  (eInput.value == "") ? eField.classList.add("shake", "error") : checkID();
+  (pInput.value == "") ? pField.classList.add("shake", "error") : checkPass();
+
+  setTimeout(()=>{ 
+    eField.classList.remove("shake");
+    pField.classList.remove("shake");
+  }, 500);
+
+  eInput.onkeyup = ()=>{checkID();} 
+  pInput.onkeyup = ()=>{checkPass();} 
+
+  function checkID(){
+    let pattern = /^\d{9}$/;
+    if(!eInput.value.match(pattern)){
+      eField.classList.add("error");
+      eField.classList.remove("valid");
+      let errorTxt = eField.querySelector(".error-txt");
+      (eInput.value != "") ? errorTxt.innerText = "Enter a valid GSW ID" : errorTxt.innerText = "User ID can't be blank";
+    }else{
+      eField.classList.remove("error");
+      eField.classList.add("valid");
     }
-    function userID_Verify(){
-        if (userID.value.length >= 8) {
-            userID.style.border = "1px solid silver";
-            userID_error.style.display = "none";
-            return true;
-        }
+  }
+
+  function checkPass(){
+    if(pInput.value == ""){
+      pField.classList.add("error");
+      pField.classList.remove("valid");
+    }else{
+      pField.classList.remove("error");
+      pField.classList.add("valid");
     }
-    function pass_Verify(){
-        if (password.value.length >= 5) {
-            password.style.border = "1px solid silver";
-            pass_error.style.display = "none";
-            return true;
-        }
-    }
-    
-    document.getElementById("myButton").onclick = function redirect(){
-        if(userID_Verify == true && pass_Verify == true){
-            location.href = "https://tay7ay.github.io/Capstone-Project/";
-        }
-    }
+  }
+
+  if(!eField.classList.contains("error") && !pField.classList.contains("error")){
+    window.location.href = form.getAttribute("action");
+  }
+}
