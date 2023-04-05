@@ -1,19 +1,19 @@
 	//Login Page Validation
 
-    var email = document.forms['form']['email'];
+    var userID = document.forms['form']['userID'];
     var password = document.forms['form']['password'];
     
-    var email_error = document.getElementById('email_error');
+    var userID_error = document.getElementById('userID_error');
     var pass_error = document.getElementById('pass_error');
     
-    email.addEventListener('textInput', email_Verify);
+    userID.addEventListener('textInput', userID_Verify);
     password.addEventListener('textInput', pass_Verify);
     
     function validated(){
-        if (email.value.length < 9) {
-            email.style.border = "1px solid red";
-            email_error.style.display = "block";
-            email.focus();
+        if (userID.value.length < 9) {
+            userID.style.border = "1px solid red";
+            userID_error.style.display = "block";
+            userID.focus();
             return false;
         }
         if (password.value.length < 6) {
@@ -24,10 +24,10 @@
         }
     
     }
-    function email_Verify(){
-        if (email.value.length >= 8) {
-            email.style.border = "1px solid silver";
-            email_error.style.display = "none";
+    function userID_Verify(){
+        if (userID.value.length >= 8) {
+            userID.style.border = "1px solid silver";
+            userID_error.style.display = "none";
             return true;
         }
     }
@@ -37,11 +37,10 @@
             pass_error.style.display = "none";
             return true;
         }
-    var sessionTimeout = 1; //hours
-    var loginDuration = new Date();
-    loginDuration.setTime(loginDuration.getTime()+(sessionTimeout*60*60*1000));
-    document.cookie = "CrewCentreSession=Valid; "+loginDuration.toGMTString()+"; path=/";
-    page=index.html;
     }
     
-    
+    document.getElementById("myButton").onclick = function redirect(){
+        if(userID_Verify == true && pass_Verify == true){
+            location.href = "https://tay7ay.github.io/Capstone-Project/";
+        }
+    }
