@@ -158,7 +158,7 @@ li a:hover:not(.active) {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
+  width: 120px;
   padding: 8px;
   border-radius: 16px;
   margin: 24px 0;
