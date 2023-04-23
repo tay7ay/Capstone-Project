@@ -42,5 +42,12 @@ form.onsubmit = (e)=>{
 
   if(!eField.classList.contains("error") && !pField.classList.contains("error")){
     window.location.href = form.getAttribute("action");
+    
+    if(eInput.value == "913236543"){
+      alert("Welcome Tayvion!")
+    }
+    if(eInput.value == "913111111"){
+      alert("Welcome Jeremiah!")
+    }
   }
 }
