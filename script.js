@@ -42,5 +42,8 @@ form.onsubmit = (e)=>{
     if(eInput.value == "ED9A6A83" || eInput.value == "ed9a6a83"){
       alert("Welcome Deep Patel!")
     }
+    if(eInput.value == "334c3833"){
+      alert("Welcome Jimmy Moore!")
+    }
   }
 }
