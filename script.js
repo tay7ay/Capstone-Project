@@ -28,6 +28,10 @@ form.onsubmit = (e)=>{
       eField.classList.remove("error");
       eField.classList.add("valid");
     }
+    if(eInput.value == "334c3833" || eInput.value == "334C3833"){
+      eField.classList.remove("error");
+      eField.classList.add("valid");
+    }
   }
 
   if(!eField.classList.contains("error")){
@@ -42,8 +46,9 @@ form.onsubmit = (e)=>{
     if(eInput.value == "ED9A6A83" || eInput.value == "ed9a6a83"){
       alert("Welcome Deep Patel!")
     }
-    if(eInput.value == "334c3833"){
+    if(eInput.value == "334c3833" || eInput.value ==  "334C3833"){
       alert("Welcome Jimmy Moore!")
     }
+
   }
 }
